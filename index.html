@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>محمد أحمد عبد العزيز ابو العلا— السيرة الذاتية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0f1923;
+    --navy-mid: #1a2c3d;
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --cream: #f7f4ef;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #8a8aaa;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cairo', 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BACKGROUND PARTICLES ── */
+  .bg-particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0;
+    animation: floatParticle linear infinite;
+  }
+
+  @keyframes floatParticle {
+    0%   { opacity: 0; transform: translateY(100vh) scale(0); }
+    10%  { opacity: 0.15; }
+    90%  { opacity: 0.08; }
+    100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+  }
+
+  /* ── LANG TOGGLE BUTTON ── */
+  .lang-btn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 999;
+    background: var(--navy);
+    color: var(--gold-light);
+    border: 1.5px solid var(--gold);
+    border-radius: 3px;
+    padding: 7px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Cairo', 'DM Sans', sans-serif;
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 16px rgba(15,25,35,0.25);
+  }
+  .lang-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+  }
+  .lang-btn:active { transform: translateY(0); }
+
+  /* ── LAYOUT ── */
+  .page {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 40px auto;
+    box-shadow: 0 30px 80px rgba(15,25,35,0.22);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    position: relative;
+    overflow: hidden;
+    order: 2;
+  }
+
+  /* Animated sidebar background */
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 40px solid rgba(201,168,76,0.12);
+    pointer-events: none;
+    animation: rotateSlow 20s linear infinite;
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 30px solid rgba(201,168,76,0.08);
+    pointer-events: none;
+    animation: rotateSlow 25s linear infinite reverse;
+  }
+
+  @keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* Sidebar gold shimmer line */
+  .sidebar-shimmer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(201,168,76,0.5) 30%,
+      rgba(201,168,76,0.8) 50%,
+      rgba(201,168,76,0.5) 70%,
+      transparent 100%);
+    animation: shimmerSlide 4s ease-in-out infinite;
+  }
+
+  @keyframes shimmerSlide {
+    0%, 100% { opacity: 0.3; transform: translateY(-20%); }
+    50%       { opacity: 1;   transform: translateY(20%); }
+  }
+
+  /* Avatar */
+  .avatar-wrap {
+    display: flex;
+    justify-content: center;
+    animation: fadeDown 0.7s ease both;
+  }
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--navy-mid);
+    border: 3px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.15);
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    animation: avatarPulse 3s ease-in-out infinite;
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+  }
+
+  @keyframes avatarPulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,76,0.15), 0 0 0 0 rgba(201,168,76,0); }
+    50%       { box-shadow: 0 0 0 6px rgba(201,168,76,0.20), 0 0 20px 6px rgba(201,168,76,0.12); }
+  }
+
+  /* Sidebar section headers */
+  .s-header {
+    font-family: 'Cairo', 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .s-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    animation: slideInLine 1.2s ease forwards;
+  }
+  @keyframes slideInLine {
+    to { right: 0; }
+  }
+
+  .c-header {
+    font-family: 'Cairo', 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+  }
+
+  /* Contact */
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-list li {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.82);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;
+    transition: color 0.25s, transform 0.25s;
+  }
+  .contact-list li:hover { color: var(--gold-light); transform: translateX(-3px); }
+  html[dir="ltr"] .contact-list li:hover { transform: translateX(3px); }
+
+  .contact-list li .icon {
+    width: 20px;
+    text-align: center;
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+  .contact-list li a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-list li a:hover { color: var(--gold-light); }
+
+  /* Skills */
+  .skill-item {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.82);
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.25s, transform 0.25s;
+  }
+  .skill-item:hover { color: var(--gold-light); transform: translateX(-4px); }
+  html[dir="ltr"] .skill-item:hover { transform: translateX(4px); }
+
+  .skill-item::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    transition: transform 0.25s;
+  }
+  .skill-item:hover::before { transform: scale(1.6); }
+
+  /* Certs */
+  .cert-item {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+    transition: color 0.25s;
+  }
+  .cert-item:hover { color: var(--gold-light); }
+  .cert-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  /* Personal info */
+  .personal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .personal-list li {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.25s, transform 0.25s;
+  }
+  .personal-list li:hover { color: rgba(255,255,255,0.95); transform: translateX(-3px); }
+  html[dir="ltr"] .personal-list li:hover { transform: translateX(3px); }
+  .personal-list .icon { color: var(--gold); }
+
+  /* ── MAIN ── */
+  .main {
+    background: var(--white);
+    padding: 52px 48px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    order: 1;
+  }
+
+  /* Hero */
+  .hero { padding-bottom: 1px; }
+  .hero-name {
+    font-family: 'Cairo', 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    letter-spacing: 0;
+    position: relative;
+  }
+  .hero-name span { color: var(--gold); }
+  .hero-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    margin-top: 8px;
+  }
+  .hero-badge {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    animation: badgePulse 4s ease-in-out infinite;
+  }
+  @keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+    50%       { box-shadow: 0 0 12px 2px rgba(201,168,76,0.2); }
+  }
+
+  /* Section */
+  .section-title {
+    font-family: 'Cairo', 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.3px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to left, transparent, var(--gold), var(--cream));
+    animation: growLine 1s ease forwards;
+    transform-origin: right;
+  }
+  html[dir="ltr"] .section-title::after {
+    background: linear-gradient(to right, transparent, var(--gold), var(--cream));
+    transform-origin: left;
+  }
+  @keyframes growLine {
+    from { opacity: 0; transform: scaleX(0); }
+    to   { opacity: 1; transform: scaleX(1); }
+  }
+
+  /* Summary */
+  .summary-text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    border-right: 3px solid var(--gold);
+    padding-right: 18px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  html[dir="ltr"] .summary-text {
+    border-right: none;
+    border-left: 3px solid var(--gold);
+    padding-right: 0;
+    padding-left: 18px;
+  }
+
+  /* Experience */
+  .exp-list { display: flex; flex-direction: column; gap: 26px; }
+  .exp-item {
+    position: relative;
+    padding: 14px 16px;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin: -14px -16px;
+  }
+  .exp-item:hover {
+    background: rgba(201,168,76,0.04);
+    transform: translateX(-4px);
+    box-shadow: 3px 0 0 0 var(--gold) inset;
+  }
+  html[dir="ltr"] .exp-item:hover {
+    transform: translateX(4px);
+    box-shadow: -3px 0 0 0 var(--gold) inset;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .exp-role {
+    font-family: 'Cairo', 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .exp-company {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+  .exp-meta {
+    font-size: 11.5px;
+    color: var(--text-light);
+    text-align: left;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .exp-meta .loc { color: var(--text-mid); }
+  .exp-divider {
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+    margin: 8px 0;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+  .exp-item:hover .exp-divider { width: 50px; }
+
+  /* Responsibilities */
+  .resp-section { margin-top: 6px; }
+  .resp-section-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  .resp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+  .resp-item {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    transition: color 0.25s;
+  }
+  .resp-item:hover { color: var(--text-dark); }
+  .head-item {
+    font-size: 14px;
+    color: black;
+    line-height: 1.7;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .resp-item::before {
+    content: '◂';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 10px;
+    margin-top: 3px;
+  }
+  html[dir="ltr"] .resp-item::before { content: '▸'; }
+
+  /* Education */
+  .edu-item { display: flex; gap: 16px; align-items: flex-start; }
+  .edu-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.7;
+    min-width: 56px;
+    line-height: 1;
+  }
+  .edu-detail .deg {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .edu-detail .inst {
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .sidebar > * {
+    animation: fadeDown 0.6s ease both;
+  }
+  .sidebar > *:nth-child(1) { animation-delay: 0.05s; }
+  .sidebar > *:nth-child(2) { animation-delay: 0.12s; }
+  .sidebar > *:nth-child(3) { animation-delay: 0.18s; }
+  .sidebar > *:nth-child(4) { animation-delay: 0.24s; }
+  .sidebar > *:nth-child(5) { animation-delay: 0.30s; }
+  .sidebar > *:nth-child(6) { animation-delay: 0.36s; }
+
+  .main > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .main > *:nth-child(1) { animation-delay: 0.1s; }
+  .main > *:nth-child(2) { animation-delay: 0.2s; }
+  .main > *:nth-child(3) { animation-delay: 0.3s; }
+
+  /* Language hidden/visible */
+  .ar-text { display: block; }
+  .en-text { display: none; }
+  html[dir="ltr"] .ar-text { display: none; }
+  html[dir="ltr"] .en-text { display: block; }
+
+  span.ar-text { display: inline; }
+  span.en-text { display: none; }
+  html[dir="ltr"] span.ar-text { display: none; }
+  html[dir="ltr"] span.en-text { display: inline; }
+
+  /* ── TABLET (600px – 900px) ── */
+  @media (min-width: 600px) and (max-width: 900px) {
+    .page {
+      grid-template-columns: 1fr 240px;
+      margin: 20px;
+      border-radius: 4px;
+    }
+    .sidebar { padding: 36px 22px; gap: 28px; }
+    .main { padding: 36px 28px 48px; gap: 32px; }
+    .avatar { width: 90px; height: 90px; font-size: 30px; }
+    .hero-name { font-size: 22px; }
+    .resp-grid { grid-template-columns: 1fr; }
+    .exp-header { flex-direction: column; gap: 4px; }
+    .exp-meta { flex-direction: row; gap: 12px; white-space: normal; }
+    .exp-item:hover { transform: none; }
+  }
+
+  /* ── MOBILE (< 600px) ── */
+  @media (max-width: 599px) {
+    .page {
+      grid-template-columns: 1fr;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .sidebar {
+      order: 1;
+      padding: 32px 20px 28px;
+      gap: 24px;
+    }
+    /* Mobile: avatar + hero side by side */
+    .mobile-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .avatar-wrap { justify-content: flex-start; }
+    .avatar { width: 80px; height: 80px; font-size: 26px; }
+    .hero { padding-bottom: 0; }
+    .hero-name { font-size: 18px; }
+    .hero-title { font-size: 10px; letter-spacing: 0.8px; margin-top: 5px; }
+    .c-header { font-size: 9px; }
+    .hero-badge { font-size: 9px; margin-top: 8px; }
+
+    .main {
+      order: 2;
+      padding: 28px 16px 44px;
+      gap: 30px;
+      word-break: break-word;
+    }
+    .resp-grid { grid-template-columns: 1fr; }
+    .summary-text { font-size: 13px; }
+    .resp-item { font-size: 12px; }
+    .exp-header { flex-direction: column; gap: 4px; align-items: flex-start; }
+    .exp-meta { white-space: normal; flex-direction: row; gap: 12px; }
+    .exp-item:hover { transform: none; box-shadow: none; }
+    .section-title { font-size: 17px; }
+    .exp-role { font-size: 15px; }
+    .lang-btn { top: 10px; left: 10px; padding: 5px 12px; font-size: 10px; }
+    body { overflow-x: hidden; }
+  }
+
+  /* ── LAPTOP / DESKTOP (> 1100px) ── */
+  @media (min-width: 1101px) {
+    .page { margin: 48px auto; }
+    .main { padding: 56px 52px 64px; }
+    .hero-name { font-size: 29px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating background particles -->
+<div class="bg-particles" id="bgParticles"></div>
+
+
+<div class="page">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-shimmer"></div>
+
+    <!-- Mobile: avatar + hero grouped -->
+    <div class="mobile-top">
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <img src="WhatsApp Image 2026-03-22 at 5.16.38 PM (1).jpeg" alt="Mohamed Ahmed Abdul Aziz" />
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="hero-name">
+          <span class="ar-text">محمد أحمد<br/><span style="color:var(--gold)">عبد العزيز ابو العلا</span></span>
+          <span class="en-text">Mohamed Ahmed<br/><span style="color:var(--gold)">Abdul Aziz</span></span>
+        </div>
+        <div class="hero-title">
+          <span class="ar-text">مدير  · موارد بشرية وشئون إدارية</span>
+          <span class="en-text">Senior Executive Officer · HR &amp; Administration Specialist</span>
+        </div>
+        <div class="c-header">
+          <span class="ar-text">+16 عامًا من الخبرة &nbsp;|&nbsp; مصر ودول مجلس التعاون</span>
+          <span class="en-text">16+ Years of Experience &nbsp;|&nbsp; Egypt &amp; Gulf States</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="s-header">
+        <span class="ar-text">معلومات شخصية</span>
+        <span class="en-text">Personal</span>
+      </div>
+      <ul class="personal-list">
+        <li>
+          <span class="icon">🎂</span>
+          <span class="ar-text">26 أغسطس 1979</span>
+          <span class="en-text">26 August 1979</span>
+        </li>
+        <li>
+          <span class="icon">🌍</span>
+          <span class="ar-text">مصري</span>
+          <span class="en-text">Egyptian</span>
+        </li>
+        <li>
+          <span class="icon">💍</span>
+          <span class="ar-text">متزوج</span>
+          <span class="en-text">Married</span>
+        </li>
+        <li><span class="icon">📍</span>
+          <span class="ar-text">القليوبية، مدينة العبور</span>
+          <span class="en-text">Qalyubia, Obour City</span>
+        </li>
+        <div class="contact-list">
+          <li><span class="icon">📞</span><a href="tel:0244958555">02-44958555</a></li>
+          <li><span class="icon">📱</span><a href="tel:01157855937">01157855937</a></li>
+          <li><span class="icon">✉</span><a href="/cdn-cgi/l/email-protection#81eceee0e9b7b1b1b4c1e6ece0e8edafe2eeec"><span class="__cf_email__" data-cfemail="a8c5c7c9c09e98989de8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></a></li>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <div>
+      <div class="s-header">
+        <span class="ar-text">المؤهلات العلمية</span>
+        <span class="en-text">Education</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <div style="font-size:11px;color:var(--gold);font-weight:500;letter-spacing:1px;">2001</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.85);margin-top:3px;line-height:1.5;">
+            <span class="ar-text">بكالوريوس — رقابة الجودة</span>
+            <span class="en-text">Quality Control Specialist — B.S.</span>
+          </div>
+          <div style="font-size:11.5px;color:rgba(255,255,255,0.45);margin-top:2px;">
+            <span class="ar-text">مصر</span>
+            <span class="en-text">Egypt</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--gold);font-weight:500;letter-spacing:1px;">1998</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.85);margin-top:3px;line-height:1.5;">
+            <span class="ar-text">دبلومة في تكنولوجيا الإنتاج</span>
+            <span class="en-text">Technology Development Diploma &amp; Training</span>
+          </div>
+          <div style="font-size:11.5px;color:rgba(255,255,255,0.45);margin-top:2px;">
+            <span class="ar-text">مصر</span>
+            <span class="en-text">Egypt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- Summary -->
+    <div class="reveal">
+      <div class="section-title">
+        <span class="ar-text">الملخص المهني</span>
+        <span class="en-text">Professional Summary</span>
+      </div>
+      <p class="summary-text">
+        <span class="ar-text">
+          متخصص في إدارة الموارد البشرية والشئون الإدارية بأكثر من 16 عامًا من الخبرة المتراكمة في مصر وفي دول الخليج العربي و القدرة علي تعدد المهام، والاهتمام الدقيق بالتفاصيل، والقدرة على التعامل مع البيئات التنظيمية المعقدة باحترافية والتنسيق بين الإدارة التنفيذية وإدارات الشركة لتحقيق الأهداف الاستراتيجية.
+        </span>
+        <span class="en-text">
+          Results-driven Executive Assistant and Senior HR Officer with over 16 years of progressive
+          experience across Egypt and Kuwait. Known for exceptional multi-tasking, meticulous attention
+          to detail, and the ability to navigate complex organizational environments with professionalism
+          and precision. Adept at bridging executive leadership with operational teams to drive strategic goals.
+        </span>
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="reveal">
+      <div class="section-title">
+        <span class="ar-text">الخبرة العملية</span>
+        <span class="en-text">Work Experience</span>
+      </div>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">
+                <span class="ar-text">مدير اداري</span>
+                <span class="en-text">Duty Manager</span>
+              </div>
+              <div class="exp-company">Oncoast.eg</div>
+            </div>
+            <div class="exp-meta">
+              <span>
+                <span class="ar-text">2018 — حتى الآن</span>
+                <span class="en-text">2018 — Present</span>
+              </span>
+              <span class="loc">📍 <span class="ar-text">مصر</span><span class="en-text">Egypt</span></span>
+            </div>
+          </div>
+          <div class="exp-divider"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">
+                <span class="ar-text">مدير تنفيذي مكتب رئيس مجلس الإدارة</span>
+                <span class="en-text">Office Manager</span>
+              </div>
+              <div class="exp-company">MB Climate</div>
+            </div>
+            <div class="exp-meta">
+              <span>2016 — 2018</span>
+              <span class="loc">📍 <span class="ar-text">المملكة المتحده - دول الخليج العربي </span><span class="en-text">Kuwait</span></span>
+            </div>
+          </div>
+          <div class="exp-divider"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">
+                <span class="ar-text">مسئول تنفيذي أول موارد بشرية</span>
+                <span class="en-text">Senior Executive Officer — HR Dept.</span>
+              </div>
+              <div class="exp-company">
+                <span class="ar-text">الشركة الوطنية للأوفست</span>
+                <span class="en-text">National Offset Company</span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span>2007 — 2016</span>
+              <span class="loc">📍 <span class="ar-text">الكويت</span><span class="en-text">Kuwait</span></span>
+            </div>
+          </div>
+          <div class="exp-divider"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">
+                <span class="ar-text">مشرف إداري</span>
+                <span class="en-text">Admin Supervisor</span>
+              </div>
+              <div class="exp-company">
+                <span class="ar-text">شركة الاء للتنمية و الاستثمار</span>
+                <span class="en-text">Alaa Development &amp; Construction Co.</span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span>2005 — 2007</span>
+              <span class="loc">📍 <span class="ar-text">مصر</span><span class="en-text">Egypt</span></span>
+            </div>
+          </div>
+          <div class="exp-divider"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">
+                <span class="ar-text">مساعد إداري</span>
+                <span class="en-text">Admin Assistant</span>
+              </div>
+              <div class="exp-company">
+                <span class="ar-text">شركة الحرية</span>
+                <span class="en-text">El Horia Company</span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span>2003 — 2005</span>
+              <span class="loc">📍 <span class="ar-text">مصر</span><span class="en-text">Egypt</span></span>
+            </div>
+          </div>
+          <div class="exp-divider"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">
+                <span class="ar-text">مشرف خدمات</span>
+                <span class="en-text">Supervisor — Services</span>
+              </div>
+              <div class="exp-company">
+                <span class="ar-text">دار الهندسة المصري للمقاولات</span>
+                <span class="en-text">Egyptian Engineering House for Contracting</span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span>2000 — 2002</span>
+              <span class="loc">📍 <span class="ar-text">مصر</span><span class="en-text">Egypt</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <!-- Certificates -->
+      <div class="reveal">
+        <div class="section-title">
+          <span class="ar-text">الدورات  التدريبية</span>
+          <span class="en-text">Certificates</span>
+        </div>
+        <div class="resp-grid">
+          <div class="resp-item">
+            <span class="ar-text">إدارة الموارد البشرية</span>
+            <span class="en-text">HR Management Qualifications</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">صياغة المراسلات الداخلية و الخارجية</span>
+            <span class="en-text">Business Writing</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">مهارات التواصل الفعّال</span>
+            <span class="en-text">Effective Communication Skills</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">إدارة الوقت والضغط</span>
+            <span class="en-text">Time &amp; Stress Management</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">العمل الجماعي</span>
+            <span class="en-text">Team Participation</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تطوير الخدمات من الخدمة العاديه إلى الخدمة المتميزة</span>
+            <span class="en-text">Beyond Service to Super Service</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">آداب العمل والأخلاق المهنية</span>
+            <span class="en-text">Business Etiquette &amp; Ethics</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">إدارة المخزون</span>
+            <span class="en-text">Inventory Management</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">كتابة التقارير الاحترافية</span>
+            <span class="en-text">Professional Report Writing</span>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="reveal">
+        <div class="section-title">
+          <span class="ar-text">المهارات الأساسية</span>
+          <span class="en-text">Core Skills</span>
+        </div>
+        <div class="resp-grid">
+          <div class="resp-item">
+            <span class="ar-text">مايكروسوفت أوفيس (متقدم)</span>
+            <span class="en-text">Microsoft Office (Advanced)</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">إعداد سياسات ولوائح الموارد البشريه</span>
+            <span class="en-text">HR Laws &amp; Compliance</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">كتابة وصياغة العقود والمراسلات وإعداد التقارير</span>
+            <span class="en-text">Business &amp; Report Writing</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">القدرة على تقييم أداء الموظفين</span>
+            <span class="en-text">Travel Administration</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تنظيم الاجتماعات والفعاليات</span>
+            <span class="en-text">Meeting &amp; Event Planning</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">إعداد برامج تدريبيه للموظفين</span>
+            <span class="en-text">Document Archiving</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">مهارة التواصل الفعال وتدريب الموظفين للعمل تحت الضغط</span>
+            <span class="en-text">Work Under Pressure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Responsibilities -->
+    <div class="reveal">
+      <div class="section-title">
+        <span class="ar-text">المسؤوليات الرئيسية</span>
+        <span class="en-text">Key Responsibilities</span>
+      </div>
+
+      <div class="resp-section">
+        <div class="head-item">
+          <strong>
+            <span class="ar-text">الخبرات الإدارية والموارد البشرية</span>
+            <span class="en-text">Managerial Expertise</span>
+          </strong>
+        </div>
+        <br>
+        <div class="resp-grid">
+          <div class="resp-item">
+            <span class="ar-text">التوظيف و الاختيار</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">التدريب و التطوير</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تقييم الأداء الوظيفي</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">رواتب الموظفين</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">الصحة و السلامة المهنية</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تطبيق قانون العمل و اللوائح الداخلية للشركة</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">إدارة التدقيق الداخلي والخارجي والردود على ملاحظات الجهات الرقابيه وإعداد تقارير متابعة دورية للإدارة العليا.</span>
+            <span class="en-text">Managed internal &amp; external audit compliance and Court of Accounts responses, with periodic follow-up reporting to senior management.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">صياغة المراسلات والعقود والاتفاقيات والكتب الرسمية ومراجعتها وإتمامها بدقة لغوية وقانونية كاملة.</span>
+            <span class="en-text">Drafted, reviewed, and finalized correspondence, contracts, agreements, and official books with full linguistic and legal accuracy.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">هيكلة وتطبيق القواعد والأنظمة والإجراءات التشغيلية؛ ونقل سير العمل من الأنظمة اليدوية إلى الرقمية.</span>
+            <span class="en-text">Structured and implemented rules, regulations, and operational procedures; migrated documentary workflows from manual to digital systems.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">إعداد تقارير فورية ودورية وفصلية وسنوية من خلال تجميع البيانات والمعلومات من كافة الأقسام.</span>
+            <span class="en-text">Prepared instantaneous, periodic, quarterly, and annual reports by aggregating cross-departmental data and intelligence.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تشكيل وإدارة الفرق واللجان مع توزيع المهام الاستراتيجية لتحقيق الأهداف ذات الأولوية القصوى.</span>
+            <span class="en-text">Formed, led, and managed teams and committees with strategic task allocation to meet high-priority objectives.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تطوير وصيانة أنظمة الأرشفة الإلكترونية وإدارة المستندات لتمكين استردادها بشكل سريع وآمن.</span>
+            <span class="en-text">Developed and maintained electronic archiving and document management systems enabling fast, secure record retrieval.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">التعامل مع متطلبات العمل الحساسة، وضمان السرية التامة.</span>
+            <span class="en-text">Handled sensitive business requirements with discretion, ensuring full confidentiality at all times.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="resp-section" style="margin-top:22px;">
+        <div class="head-item">
+          <strong>
+            <span class="ar-text">إدارة العلاقات العامة والحكومية</span>
+            <span class="en-text">Supervisor — Services</span>
+          </strong>
+        </div>
+        <br>
+        <div class="resp-grid">
+          <div class="resp-item">
+            <span class="ar-text">خبرة واسعة في التنسيق مع الجهات الحكومية والشركات الخاصة.</span>
+            <span class="en-text">Extensive liaison experience with public and private sector bodies at both national and regional levels.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">خبرة في العلاقات العامة — متابعة المحتوى المنشور اعلاميا ورفع تقرير بذلك للإدارة العليا.</span>
+            <span class="en-text">Media relations experience — monitored and reported published content to senior leadership.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">خبرة في التعامل مع كبار الشخصيات مع الالتزام الكامل بالبروتوكول.</span>
+            <span class="en-text">Expert in hosting VIPs and high-profile external stakeholders with full protocol adherence.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">تزليل العقبات وتحديد أسرع الحلول ودعم اتخاذ القرار التنفيذي.</span>
+            <span class="en-text">Identified fastest and most cost-effective solutions for government requirements and executive decision-making support.</span>
+          </div>
+          <div class="resp-item">
+            <span class="ar-text">التخطيط وتنظيم رحلات العمل، وترتيب التأشيرات والفنادق والتنقلات الرسمية في الداخل والخارج.</span>
+            <span class="en-text">Planned and coordinated executive travel, including visas, hotels, and official transportation domestically and internationally.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  /* ── LANG TOGGLE ── */
+  function toggleLang() {
+    const html = document.documentElement;
+    const btn = document.getElementById('langBtn');
+    if (html.getAttribute('dir') === 'rtl') {
+      html.setAttribute('dir', 'ltr');
+      html.setAttribute('lang', 'en');
+      btn.textContent = 'عر / EN';
+    } else {
+      html.setAttribute('dir', 'rtl');
+      html.setAttribute('lang', 'ar');
+      btn.textContent = 'EN / عر';
+    }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  /* ── BACKGROUND PARTICLES ── */
+  const container = document.getElementById('bgParticles');
+  const count = 18;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 3;
+    p.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${Math.random() * 100}%;
+      animation-duration: ${Math.random() * 18 + 12}s;
+      animation-delay: ${Math.random() * 12}s;
+    `;
+    container.appendChild(p);
+  }
+</script>
+</body>
+</html>
