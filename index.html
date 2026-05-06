@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mohamed Ahmed Abdul Aziz — CV</title>
+<title>محمد أحمد عبد العزيز ابو العلا— السيرة الذاتية</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -19,6 +19,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -44,6 +45,7 @@
     opacity: 0;
     animation: floatParticle linear infinite;
   }
+
   @keyframes floatParticle {
     0%   { opacity: 0; transform: translateY(100vh) scale(0); }
     10%  { opacity: 0.15; }
@@ -105,26 +107,33 @@
     overflow: hidden;
     order: 2;
   }
+
   .sidebar::before {
     content: '';
     position: absolute;
-    top: -80px; left: -80px;
-    width: 220px; height: 220px;
+    top: -80px;
+    left: -80px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     border: 40px solid rgba(201,168,76,0.12);
     pointer-events: none;
     animation: rotateSlow 20s linear infinite;
   }
+
   .sidebar::after {
     content: '';
     position: absolute;
-    bottom: -60px; right: -60px;
-    width: 180px; height: 180px;
+    bottom: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 30px solid rgba(201,168,76,0.08);
     pointer-events: none;
     animation: rotateSlow 25s linear infinite reverse;
   }
+
   @keyframes rotateSlow {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
@@ -132,31 +141,57 @@
 
   .sidebar-shimmer {
     position: absolute;
-    top: 0; right: 0;
-    width: 2px; height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(201,168,76,0.5) 30%, rgba(201,168,76,0.8) 50%, rgba(201,168,76,0.5) 70%, transparent 100%);
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(201,168,76,0.5) 30%,
+      rgba(201,168,76,0.8) 50%,
+      rgba(201,168,76,0.5) 70%,
+      transparent 100%);
     animation: shimmerSlide 4s ease-in-out infinite;
   }
+
   @keyframes shimmerSlide {
     0%, 100% { opacity: 0.3; transform: translateY(-20%); }
     50%       { opacity: 1;   transform: translateY(20%); }
   }
 
-  .avatar-wrap { display: flex; justify-content: center; animation: fadeDown 0.7s ease both; }
+  .avatar-wrap {
+    display: flex;
+    justify-content: center;
+    animation: fadeDown 0.7s ease both;
+  }
   .avatar {
-    width: 110px; height: 110px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background: var(--navy-mid);
     border: 3px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 38px; font-weight: 700;
-    color: var(--gold); letter-spacing: 2px;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
     box-shadow: 0 0 0 6px rgba(201,168,76,0.15);
-    overflow: hidden; flex-shrink: 0; position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
     animation: avatarPulse 3s ease-in-out infinite;
   }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%; }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50%;
+  }
+
   @keyframes avatarPulse {
     0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,76,0.15), 0 0 0 0 rgba(201,168,76,0); }
     50%       { box-shadow: 0 0 0 6px rgba(201,168,76,0.20), 0 0 20px 6px rgba(201,168,76,0.12); }
@@ -164,57 +199,128 @@
 
   .s-header {
     font-family: 'Cairo', 'DM Sans', sans-serif;
-    font-size: 10px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 14px; padding-bottom: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
     border-bottom: 1px solid rgba(201,168,76,0.3);
-    position: relative; overflow: hidden;
+    position: relative;
+    overflow: hidden;
   }
   .s-header::after {
     content: '';
-    position: absolute; bottom: 0; right: -100%;
-    width: 100%; height: 1px; background: var(--gold);
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
     animation: slideInLine 1.2s ease forwards;
   }
-  @keyframes slideInLine { to { right: 0; } }
+  @keyframes slideInLine {
+    to { right: 0; }
+  }
 
   .c-header {
     font-family: 'Cairo', 'DM Sans', sans-serif;
-    font-size: 10px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 14px; padding-bottom: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
   }
 
-  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   .contact-list li {
-    font-size: 12.5px; color: rgba(255,255,255,0.82);
-    display: flex; align-items: center; gap: 10px; line-height: 1.5;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.82);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;
     transition: color 0.25s, transform 0.25s;
   }
   .contact-list li:hover { color: var(--gold-light); transform: translateX(-3px); }
   html[dir="ltr"] .contact-list li:hover { transform: translateX(3px); }
-  .contact-list li .icon { width: 20px; text-align: center; color: var(--gold); flex-shrink: 0; font-size: 13px; }
-  .contact-list li a { color: rgba(255,255,255,0.82); text-decoration: none; transition: color 0.2s; }
+
+  .contact-list li .icon {
+    width: 20px;
+    text-align: center;
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+  .contact-list li a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .contact-list li a:hover { color: var(--gold-light); }
 
   .skill-item {
-    font-size: 12.5px; color: rgba(255,255,255,0.82);
-    padding: 6px 0; display: flex; align-items: center; gap: 8px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.82);
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     transition: color 0.25s, transform 0.25s;
   }
   .skill-item:hover { color: var(--gold-light); transform: translateX(-4px); }
   html[dir="ltr"] .skill-item:hover { transform: translateX(4px); }
+
   .skill-item::before {
-    content: ''; width: 5px; height: 5px; border-radius: 50%;
-    background: var(--gold); flex-shrink: 0; transition: transform 0.25s;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    transition: transform 0.25s;
   }
   .skill-item:hover::before { transform: scale(1.6); }
 
-  .personal-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .cert-item {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+    transition: color 0.25s;
+  }
+  .cert-item:hover { color: var(--gold-light); }
+  .cert-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .personal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
   .personal-list li {
-    font-size: 12.5px; color: rgba(255,255,255,0.75);
-    display: flex; align-items: center; gap: 8px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: color 0.25s, transform 0.25s;
   }
   .personal-list li:hover { color: rgba(255,255,255,0.95); transform: translateX(-3px); }
@@ -225,24 +331,42 @@
   .main {
     background: var(--white);
     padding: 52px 48px 60px;
-    display: flex; flex-direction: column; gap: 40px; order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    order: 1;
   }
 
   .hero { padding-bottom: 1px; }
   .hero-name {
     font-family: 'Cairo', 'Cormorant Garamond', serif;
-    font-size: 26px; font-weight: 700; line-height: 1.15;
-    color: var(--navy); letter-spacing: 0; position: relative;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    letter-spacing: 0;
+    position: relative;
   }
+  .hero-name span { color: var(--gold); }
   .hero-title {
-    font-size: 13px; font-weight: 500; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--gold); margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 8px;
   }
   .hero-badge {
-    display: inline-block; margin-top: 14px;
-    background: var(--navy); color: var(--gold-light);
-    font-size: 11px; font-weight: 500; letter-spacing: 1px;
-    text-transform: uppercase; padding: 5px 14px; border-radius: 2px;
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
     animation: badgePulse 4s ease-in-out infinite;
   }
   @keyframes badgePulse {
@@ -252,12 +376,19 @@
 
   .section-title {
     font-family: 'Cairo', 'Cormorant Garamond', serif;
-    font-size: 20px; font-weight: 600; color: var(--navy);
-    letter-spacing: 0.3px; margin-bottom: 18px;
-    display: flex; align-items: center; gap: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.3px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
   .section-title::after {
-    content: ''; flex: 1; height: 1px;
+    content: '';
+    flex: 1;
+    height: 1px;
     background: linear-gradient(to left, transparent, var(--gold), var(--cream));
     animation: growLine 1s ease forwards;
     transform-origin: right;
@@ -272,58 +403,159 @@
   }
 
   .summary-text {
-    font-size: 14px; line-height: 1.9; color: var(--text-mid);
-    border-right: 3px solid var(--gold); padding-right: 18px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    border-right: 3px solid var(--gold);
+    padding-right: 18px;
+    position: relative;
+    transition: border-color 0.3s;
   }
   html[dir="ltr"] .summary-text {
-    border-right: none; border-left: 3px solid var(--gold);
-    padding-right: 0; padding-left: 18px;
+    border-right: none;
+    border-left: 3px solid var(--gold);
+    padding-right: 0;
+    padding-left: 18px;
   }
 
   .exp-list { display: flex; flex-direction: column; gap: 26px; }
   .exp-item {
-    position: relative; padding: 14px 16px; border-radius: 4px;
+    position: relative;
+    padding: 14px 16px;
+    border-radius: 4px;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     margin: -14px -16px;
   }
   .exp-item:hover {
-    background: rgba(201,168,76,0.04); transform: translateX(-4px);
+    background: rgba(201,168,76,0.04);
+    transform: translateX(-4px);
     box-shadow: 3px 0 0 0 var(--gold) inset;
   }
-  html[dir="ltr"] .exp-item:hover { transform: translateX(4px); box-shadow: -3px 0 0 0 var(--gold) inset; }
+  html[dir="ltr"] .exp-item:hover {
+    transform: translateX(4px);
+    box-shadow: -3px 0 0 0 var(--gold) inset;
+  }
 
-  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; }
-  .exp-role { font-family: 'Cairo', 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--navy); }
-  .exp-company { font-size: 13px; font-weight: 500; color: var(--gold); margin-top: 2px; }
-  .exp-meta { font-size: 11.5px; color: var(--text-light); text-align: left; white-space: nowrap; display: flex; flex-direction: column; gap: 2px; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .exp-role {
+    font-family: 'Cairo', 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .exp-company {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+  .exp-meta {
+    font-size: 11.5px;
+    color: var(--text-light);
+    text-align: left;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
   .exp-meta .loc { color: var(--text-mid); }
-  .exp-divider { width: 30px; height: 2px; background: var(--gold); margin: 8px 0; border-radius: 2px; transition: width 0.4s ease; }
+  .exp-divider {
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+    margin: 8px 0;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
   .exp-item:hover .exp-divider { width: 50px; }
 
   .resp-section { margin-top: 6px; }
   .resp-section-title {
-    font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--text-light); margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 10px;
   }
-  .resp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+  .resp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
   .resp-item {
-    font-size: 13px; color: var(--text-mid); line-height: 1.7;
-    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
     transition: color 0.25s;
   }
   .resp-item:hover { color: var(--text-dark); }
-  .head-item { font-size: 14px; color: black; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+  .head-item {
+    font-size: 14px;
+    color: black;
+    line-height: 1.7;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
   .resp-item::before {
-    content: '◂'; color: var(--gold); flex-shrink: 0;
-    font-size: 10px; margin-top: 3px;
+    content: '◂';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 10px;
+    margin-top: 3px;
   }
   html[dir="ltr"] .resp-item::before { content: '▸'; }
 
+  .edu-item { display: flex; gap: 16px; align-items: flex-start; }
+  .edu-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.7;
+    min-width: 56px;
+    line-height: 1;
+  }
+  .edu-detail .deg {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .edu-detail .inst {
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
   /* ── SCROLL REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
@@ -333,37 +565,62 @@
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
-  .sidebar > * { animation: fadeDown 0.6s ease both; }
+  .sidebar > * {
+    animation: fadeDown 0.6s ease both;
+  }
   .sidebar > *:nth-child(1) { animation-delay: 0.05s; }
   .sidebar > *:nth-child(2) { animation-delay: 0.12s; }
   .sidebar > *:nth-child(3) { animation-delay: 0.18s; }
   .sidebar > *:nth-child(4) { animation-delay: 0.24s; }
   .sidebar > *:nth-child(5) { animation-delay: 0.30s; }
   .sidebar > *:nth-child(6) { animation-delay: 0.36s; }
-  .main > * { animation: fadeUp 0.7s ease both; }
+
+  .main > * {
+    animation: fadeUp 0.7s ease both;
+  }
   .main > *:nth-child(1) { animation-delay: 0.1s; }
   .main > *:nth-child(2) { animation-delay: 0.2s; }
   .main > *:nth-child(3) { animation-delay: 0.3s; }
 
-  /* ── LANGUAGE VISIBILITY ── */
   .ar-text { display: block; }
   .en-text { display: none; }
   html[dir="ltr"] .ar-text { display: none; }
   html[dir="ltr"] .en-text { display: block; }
+
   span.ar-text { display: inline; }
   span.en-text { display: none; }
   html[dir="ltr"] span.ar-text { display: none; }
   html[dir="ltr"] span.en-text { display: inline; }
 
-  /* ── GLOBAL ── */
-  html, body { overflow-x: hidden; width: 100%; }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-  /* ── MOBILE < 400px ── */
   @media (max-width: 399px) {
-    .page { grid-template-columns: 1fr; margin: 0; border-radius: 0; box-shadow: none; width: 100%; }
-    .sidebar { order: 1; padding: 24px 14px 22px; gap: 20px; }
-    .mobile-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .page {
+      grid-template-columns: 1fr;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      width: 100%;
+    }
+    .sidebar {
+      order: 1;
+      padding: 24px 14px 22px;
+      gap: 20px;
+    }
+    .mobile-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
     .avatar-wrap { justify-content: flex-start; }
     .avatar { width: 68px; height: 68px; font-size: 22px; }
     .hero { padding-bottom: 0; }
@@ -371,9 +628,16 @@
     .hero-title { font-size: 9px; letter-spacing: 0.5px; margin-top: 4px; }
     .c-header { font-size: 8.5px; letter-spacing: 1px; }
     .hero-badge { font-size: 8.5px; padding: 4px 10px; }
-    .contact-list li, .personal-list li, .skill-item { font-size: 11.5px; }
+    .contact-list li, .personal-list li, .skill-item, .cert-item {
+      font-size: 11.5px;
+    }
     .s-header { font-size: 9px; }
-    .main { order: 2; padding: 22px 14px 36px; gap: 26px; word-break: break-word; }
+    .main {
+      order: 2;
+      padding: 22px 14px 36px;
+      gap: 26px;
+      word-break: break-word;
+    }
     .resp-grid { grid-template-columns: 1fr; gap: 6px 0; }
     .summary-text { font-size: 12.5px; line-height: 1.8; }
     .resp-item { font-size: 11.5px; }
@@ -386,11 +650,24 @@
     .lang-btn { top: 8px; left: 8px; padding: 5px 10px; font-size: 9.5px; }
   }
 
-  /* ── MOBILE 400–599px ── */
   @media (min-width: 400px) and (max-width: 599px) {
-    .page { grid-template-columns: 1fr; margin: 0; border-radius: 0; box-shadow: none; width: 100%; }
-    .sidebar { order: 1; padding: 32px 20px 28px; gap: 24px; }
-    .mobile-top { display: flex; align-items: center; gap: 18px; }
+    .page {
+      grid-template-columns: 1fr;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      width: 100%;
+    }
+    .sidebar {
+      order: 1;
+      padding: 32px 20px 28px;
+      gap: 24px;
+    }
+    .mobile-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
     .avatar-wrap { justify-content: flex-start; }
     .avatar { width: 80px; height: 80px; font-size: 26px; }
     .hero { padding-bottom: 0; }
@@ -398,7 +675,12 @@
     .hero-title { font-size: 10px; letter-spacing: 0.8px; margin-top: 5px; }
     .c-header { font-size: 9px; }
     .hero-badge { font-size: 9px; margin-top: 8px; }
-    .main { order: 2; padding: 28px 18px 44px; gap: 30px; word-break: break-word; }
+    .main {
+      order: 2;
+      padding: 28px 18px 44px;
+      gap: 30px;
+      word-break: break-word;
+    }
     .resp-grid { grid-template-columns: 1fr; }
     .summary-text { font-size: 13px; }
     .resp-item { font-size: 12px; }
@@ -410,16 +692,32 @@
     .lang-btn { top: 10px; left: 10px; padding: 5px 12px; font-size: 10px; }
   }
 
-  /* ── TABLET 600–767px ── */
   @media (min-width: 600px) and (max-width: 767px) {
-    .page { grid-template-columns: 1fr; margin: 16px; border-radius: 4px; width: calc(100% - 32px); }
-    .sidebar { order: 1; padding: 36px 28px 30px; gap: 26px; }
-    .mobile-top { display: flex; align-items: center; gap: 20px; }
+    .page {
+      grid-template-columns: 1fr;
+      margin: 16px;
+      border-radius: 4px;
+      width: calc(100% - 32px);
+    }
+    .sidebar {
+      order: 1;
+      padding: 36px 28px 30px;
+      gap: 26px;
+    }
+    .mobile-top {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
     .avatar-wrap { justify-content: flex-start; }
     .avatar { width: 88px; height: 88px; font-size: 28px; }
     .hero-name { font-size: 20px; }
     .hero-title { font-size: 11px; }
-    .main { order: 2; padding: 36px 28px 48px; gap: 32px; }
+    .main {
+      order: 2;
+      padding: 36px 28px 48px;
+      gap: 32px;
+    }
     .resp-grid { grid-template-columns: 1fr 1fr; }
     .exp-header { flex-direction: column; gap: 4px; }
     .exp-meta { flex-direction: row; gap: 12px; white-space: normal; }
@@ -427,9 +725,13 @@
     .section-title { font-size: 18px; }
   }
 
-  /* ── TABLET LANDSCAPE 768–1024px ── */
   @media (min-width: 768px) and (max-width: 1024px) {
-    .page { grid-template-columns: 1fr 230px; margin: 24px auto; width: calc(100% - 48px); max-width: 1100px; }
+    .page {
+      grid-template-columns: 1fr 230px;
+      margin: 24px auto;
+      width: calc(100% - 48px);
+      max-width: 1100px;
+    }
     .sidebar { padding: 36px 22px; gap: 28px; }
     .main { padding: 38px 30px 50px; gap: 34px; }
     .avatar { width: 90px; height: 90px; font-size: 30px; }
@@ -440,101 +742,192 @@
     .exp-item:hover { transform: none; }
   }
 
-  /* ── LAPTOP ≥ 1025px ── */
   @media (min-width: 1025px) {
-    body { background: var(--navy); }
+
+    body {
+      background: var(--navy);
+      min-height: 100vh;
+    }
+
     .page {
-      display: grid; grid-template-columns: 1fr 340px;
-      max-width: 1320px; width: calc(100% - 64px); margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      max-width: 1320px;
+      width: calc(100% - 64px);
+      margin: 40px auto;
       border-radius: 16px;
-      box-shadow: 0 60px 140px rgba(15,25,35,0.55), 0 0 0 1px rgba(201,168,76,0.12);
-      overflow: hidden; min-height: calc(100vh - 80px);
+      box-shadow: 0 60px 140px rgba(15,25,35,0.55),
+                  0 0 0 1px rgba(201,168,76,0.12);
+      overflow: hidden;
+      min-height: calc(100vh - 80px);
     }
+
     .sidebar {
-      order: 2; padding: 56px 38px; gap: 30px; align-items: stretch;
-      position: sticky; top: 0; height: 100vh; overflow-y: auto;
-      scrollbar-width: thin; scrollbar-color: rgba(201,168,76,0.3) transparent;
+      order: 2;
+      padding: 56px 38px 56px;
+      gap: 30px;
+      align-items: stretch;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(201,168,76,0.3) transparent;
     }
+
     .mobile-top {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 20px; text-align: center;
-      padding-bottom: 28px; border-bottom: 1px solid rgba(201,168,76,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(201,168,76,0.18);
     }
+
     .avatar-wrap { justify-content: center; }
+
     .avatar {
-      width: 148px; height: 148px; font-size: 52px;
-      box-shadow: 0 0 0 8px rgba(201,168,76,0.13), 0 0 0 16px rgba(201,168,76,0.05), 0 24px 48px rgba(15,25,35,0.45);
+      width: 148px;
+      height: 148px;
+      font-size: 52px;
+      box-shadow:
+        0 0 0 8px rgba(201,168,76,0.13),
+        0 0 0 16px rgba(201,168,76,0.05),
+        0 24px 48px rgba(15,25,35,0.45);
     }
+
     .hero { text-align: center; }
     .hero-name { font-size: 21px; line-height: 1.35; }
     .hero-title { font-size: 10.5px; letter-spacing: 1.2px; margin-top: 8px; }
-    .c-header { font-size: 9.5px; letter-spacing: 1.5px; margin-top: 4px; }
+    .c-header   { font-size: 9.5px; letter-spacing: 1.5px; margin-top: 4px; }
     .hero-badge { font-size: 10px; margin-top: 12px; }
+
     .s-header { font-size: 9px; letter-spacing: 2.5px; }
-    .personal-list li { font-size: 12px; }
-    .contact-list li { font-size: 12px; }
-    .skill-item { font-size: 12px; }
+
+    .personal-list li  { font-size: 12px; }
+    .contact-list li   { font-size: 12px; }
+    .skill-item        { font-size: 12px; }
+    .cert-item         { font-size: 11.5px; }
 
     .main {
-      order: 1; background: var(--cream);
-      padding: 52px 52px 72px; gap: 0;
-      display: flex; flex-direction: column;
+      order: 1;
+      background: var(--cream);
+      padding: 52px 52px 72px;
+      gap: 0;
+      display: flex;
+      flex-direction: column;
     }
+
     .main > * {
-      background: var(--white); border-radius: 10px;
-      padding: 32px 36px; margin-bottom: 20px;
+      background: var(--white);
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
       box-shadow: 0 3px 20px rgba(15,25,35,0.06);
       border-top: 3px solid var(--gold);
       animation: none;
     }
+
+    .main > div:not(.reveal):not([class]) {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
     .main > div > .reveal {
-      background: var(--white); border-radius: 10px;
-      padding: 28px 34px; margin-bottom: 18px;
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px 34px;
+      margin-bottom: 18px;
       box-shadow: 0 3px 20px rgba(15,25,35,0.06);
       border-top: 3px solid var(--gold);
     }
+
     .section-title {
       font-family: 'Cairo', 'DM Sans', sans-serif;
-      font-size: 10.5px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--gold);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
       margin-bottom: 24px;
-      display: flex; align-items: center; gap: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
+
     .section-title::before {
-      content: ''; display: block; width: 22px; height: 2.5px;
-      background: var(--gold); border-radius: 2px; flex-shrink: 0;
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2.5px;
+      background: var(--gold);
+      border-radius: 2px;
+      flex-shrink: 0;
     }
+
     .section-title::after { display: none; }
-    .summary-text { font-size: 14.5px; line-height: 2; }
+
+    .summary-text {
+      font-size: 14.5px;
+      line-height: 2;
+    }
+
     .exp-list { gap: 0; }
+
     .exp-item {
-      padding: 20px 4px; margin: 0; border-radius: 0;
-      border-bottom: 1px solid rgba(201,168,76,0.1); border-right: none;
+      padding: 20px 4px;
+      margin: 0;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      border-right: none;
     }
     .exp-item:last-child { border-bottom: none; }
-    .exp-item:hover { background: rgba(201,168,76,0.04); transform: translateX(-4px); box-shadow: none; }
+
+    .exp-item:hover {
+      background: rgba(201,168,76,0.04);
+      transform: translateX(-4px);
+      box-shadow: none;
+      border-right: none;
+    }
     html[dir="ltr"] .exp-item:hover { transform: translateX(4px); }
+
     .exp-item::before {
-      content: ''; position: absolute; right: -6px; top: 28px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--gold); border: 2px solid var(--white);
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 28px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--white);
       box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
     }
     html[dir="ltr"] .exp-item::before { right: auto; left: -6px; }
+
     .exp-role { font-size: 16px; }
     .exp-company { font-size: 13px; }
     .exp-meta { font-size: 11px; }
-    .resp-grid { grid-template-columns: 1fr 1fr 1fr; gap: 10px 24px; }
+
+    .resp-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px 24px;
+    }
     .resp-item { font-size: 13px; }
+
     .lang-btn { top: 20px; left: 20px; font-size: 11px; }
   }
 </style>
 </head>
 <body>
 
+<!-- Floating background particles -->
 <div class="bg-particles" id="bgParticles"></div>
 
-<!-- ── LANGUAGE TOGGLE BUTTON ── -->
+<!-- Language Toggle Button -->
 <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / عر</button>
 
 <div class="page">
@@ -543,19 +936,22 @@
   <aside class="sidebar">
     <div class="sidebar-shimmer"></div>
 
+    <!-- Mobile: avatar + hero grouped -->
     <div class="mobile-top">
       <div class="avatar-wrap">
-        <div class="avatar">MA</div>
+        <div class="avatar">
+          <img src="WhatsApp Image 2026-03-22 at 5.16.38 PM (1).jpeg" alt="Mohamed Ahmed Abdul Aziz Abu El-Ela" />
+        </div>
       </div>
 
       <div class="hero">
         <div class="hero-name">
           <span class="ar-text">محمد أحمد<br/><span style="color:var(--gold)">عبد العزيز ابو العلا</span></span>
-          <span class="en-text">Mohamed Ahmed<br/><span style="color:var(--gold)">Abdul Aziz Abu El-Ala</span></span>
+          <span class="en-text">Mohamed Ahmed<br/><span style="color:var(--gold)">Abdul Aziz Abu El-Ela</span></span>
         </div>
         <div class="hero-title">
-          <span class="ar-text">مدير إداري · موارد بشرية وشئون إدارية</span>
-          <span class="en-text">Administrative Manager · HR &amp; Administrative Affairs</span>
+          <span class="ar-text">مدير  · موارد بشرية وشئون إدارية</span>
+          <span class="en-text">Senior Executive Officer · HR &amp; Administration</span>
         </div>
         <div class="c-header">
           <span class="ar-text">+16 عامًا من الخبرة &nbsp;|&nbsp; مصر ودول مجلس التعاون</span>
@@ -588,10 +984,10 @@
         </li>
         <li>
           <span class="icon">📍</span>
-          <span class="ar-text">القاهرة، مدينة القاهرة الجديدة</span>
+          <span class="ar-text">القاهرة، القاهرة الجديدة</span>
           <span class="en-text">Cairo, New Cairo City</span>
         </li>
-        <div class="contact-list" style="margin-top:6px;">
+        <div class="contact-list">
           <li><span class="icon">📱</span><a href="tel:01157855937">01157855937</a></li>
           <li><span class="icon">✉</span><a href="mailto:moah6005@gmail.com">moah6005@gmail.com</a></li>
         </div>
@@ -609,7 +1005,7 @@
           <div style="font-size:11px;color:var(--gold);font-weight:500;letter-spacing:1px;">2001</div>
           <div style="font-size:13px;color:rgba(255,255,255,0.85);margin-top:3px;line-height:1.5;">
             <span class="ar-text">بكالوريوس — رقابة الجودة</span>
-            <span class="en-text">Bachelor of Science — Quality Control</span>
+            <span class="en-text">Bachelor's Degree — Quality Control</span>
           </div>
           <div style="font-size:11.5px;color:rgba(255,255,255,0.45);margin-top:2px;">
             <span class="ar-text">مصر</span>
@@ -635,7 +1031,7 @@
   <!-- ── MAIN ── -->
   <main class="main">
 
-    <!-- Professional Summary -->
+    <!-- Summary -->
     <div class="reveal">
       <div class="section-title">
         <span class="ar-text">الملخص المهني</span>
@@ -643,20 +1039,15 @@
       </div>
       <p class="summary-text">
         <span class="ar-text">
-          متخصص في إدارة الموارد البشرية والشئون الإدارية بأكثر من 16 عامًا من الخبرة المتراكمة في مصر ودول الخليج العربي، والقدرة على تعدد المهام، والاهتمام الدقيق بالتفاصيل، والقدرة على التعامل مع البيئات التنظيمية المعقدة باحترافية، والتنسيق بين الإدارة التنفيذية وإدارات الشركة لتحقيق الأهداف الاستراتيجية.
+          متخصص في إدارة الموارد البشرية والشئون الإدارية بأكثر من 16 عامًا من الخبرة المتراكمة في مصر وفي دول الخليج العربي و القدرة علي تعدد المهام، والاهتمام الدقيق بالتفاصيل، والقدرة على التعامل مع البيئات التنظيمية المعقدة باحترافية والتنسيق بين الإدارة التنفيذية وإدارات الشركة لتحقيق الأهداف الاستراتيجية.
         </span>
         <span class="en-text">
-          Results-driven Administrative Manager and Senior HR Professional with over 16 years of
-          progressive experience across Egypt and the Gulf States. Recognized for exceptional
-          multitasking capabilities, meticulous attention to detail, and the ability to navigate
-          complex organizational environments with professionalism and precision. Proven track record
-          of bridging executive leadership with operational departments to drive strategic objectives
-          and deliver measurable results.
+          Results-driven Senior HR and Administrative Affairs Specialist with over 16 years of progressive experience across Egypt and the Gulf States. Recognized for exceptional multitasking ability, meticulous attention to detail, and a proven capacity to navigate complex organizational environments with professionalism and precision. Adept at bridging executive leadership with operational departments to deliver on strategic objectives efficiently and effectively.
         </span>
       </p>
     </div>
 
-    <!-- Work Experience -->
+    <!-- Experience -->
     <div class="reveal">
       <div class="section-title">
         <span class="ar-text">الخبرات العملية</span>
@@ -668,7 +1059,7 @@
           <div class="exp-header">
             <div>
               <div class="exp-role">
-                <span class="ar-text">مدير إداري</span>
+                <span class="ar-text">مدير اداري</span>
                 <span class="en-text">Administrative Manager</span>
               </div>
               <div class="exp-company">Oncoast.eg</div>
@@ -685,14 +1076,14 @@
           <div class="exp-header">
             <div>
               <div class="exp-role">
-                <span class="ar-text">مدير تنفيذي — مكتب رئيس مجلس الإدارة</span>
+                <span class="ar-text">مدير تنفيذي مكتب رئيس مجلس الإدارة</span>
                 <span class="en-text">Executive Office Manager — Chairman's Office</span>
               </div>
               <div class="exp-company">MB Climate</div>
             </div>
             <div class="exp-meta">
               <span>2016 — 2018</span>
-              <span class="loc">📍 <span class="ar-text">دول الخليج العربي</span><span class="en-text">Gulf States</span></span>
+              <span class="loc">📍 <span class="ar-text">المملكة المتحده - دول الخليج العربي</span><span class="en-text">United Kingdom / Gulf States</span></span>
             </div>
           </div>
           <div class="exp-divider"></div>
@@ -702,8 +1093,8 @@
           <div class="exp-header">
             <div>
               <div class="exp-role">
-                <span class="ar-text">مسؤول تنفيذي أول — قسم الموارد البشرية</span>
-                <span class="en-text">Senior Executive Officer — Human Resources Dept.</span>
+                <span class="ar-text">مسئول تنفيذي أول موارد بشرية</span>
+                <span class="en-text">Senior Executive Officer — Human Resources</span>
               </div>
               <div class="exp-company">
                 <span class="ar-text">الشركة الوطنية للأوفست</span>
@@ -726,8 +1117,8 @@
                 <span class="en-text">Administrative Supervisor</span>
               </div>
               <div class="exp-company">
-                <span class="ar-text">شركة الاء للتنمية والاستثمار</span>
-                <span class="en-text">Alaa Development &amp; Investment Co.</span>
+                <span class="ar-text">شركة الاء للتنمية و الاستثمار</span>
+                <span class="en-text">Alaa Development &amp; Investment Company</span>
               </div>
             </div>
             <div class="exp-meta">
@@ -781,11 +1172,11 @@
     </div>
 
     <div>
-      <!-- Training & Certificates -->
+      <!-- Certificates / Training -->
       <div class="reveal">
         <div class="section-title">
           <span class="ar-text">الدورات التدريبية</span>
-          <span class="en-text">Training &amp; Certificates</span>
+          <span class="en-text">Professional Training &amp; Certificates</span>
         </div>
         <div class="resp-grid">
           <div class="resp-item">
@@ -809,8 +1200,8 @@
             <span class="en-text">Teamwork &amp; Collaboration</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">تطوير الخدمات من العادية إلى المتميزة</span>
-            <span class="en-text">Elevating Service from Standard to Excellence</span>
+            <span class="ar-text">تطوير الخدمات من الخدمة العاديه إلى الخدمة المتميزة</span>
+            <span class="en-text">From Standard Service to Excellence</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">آداب العمل والأخلاق المهنية</span>
@@ -842,14 +1233,14 @@
           </div>
           <div class="resp-item">
             <span class="ar-text">إعداد سياسات ولوائح الموارد البشرية</span>
-            <span class="en-text">HR Policy Development &amp; Compliance</span>
+            <span class="en-text">HR Policy &amp; Regulatory Compliance</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">كتابة وصياغة العقود والمراسلات وإعداد التقارير</span>
             <span class="en-text">Contract Drafting &amp; Business Writing</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">تقييم أداء الموظفين</span>
+            <span class="ar-text">القدرة على تقييم أداء الموظفين</span>
             <span class="en-text">Employee Performance Evaluation</span>
           </div>
           <div class="resp-item">
@@ -858,11 +1249,11 @@
           </div>
           <div class="resp-item">
             <span class="ar-text">إعداد برامج تدريبية للموظفين</span>
-            <span class="en-text">Training Programme Development</span>
+            <span class="en-text">Employee Training Program Development</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">التواصل الفعال والعمل تحت الضغط</span>
-            <span class="en-text">Effective Communication &amp; Work Under Pressure</span>
+            <span class="ar-text">مهارة التواصل الفعال وتدريب الموظفين للعمل تحت الضغط</span>
+            <span class="en-text">Effective Communication &amp; High-Pressure Team Leadership</span>
           </div>
         </div>
       </div>
@@ -875,12 +1266,12 @@
         <span class="en-text">Key Responsibilities</span>
       </div>
 
-      <!-- Administrative & HR -->
+      <!-- HR & Admin -->
       <div class="resp-section">
         <div class="head-item">
           <strong>
             <span class="ar-text">الخبرات الإدارية والموارد البشرية</span>
-            <span class="en-text">Administrative &amp; Human Resources Expertise</span>
+            <span class="en-text">HR &amp; Administrative Expertise</span>
           </strong>
         </div>
         <br>
@@ -895,10 +1286,10 @@
           </div>
           <div class="resp-item">
             <span class="ar-text">تقييم الأداء الوظيفي</span>
-            <span class="en-text">Employee Performance Appraisal</span>
+            <span class="en-text">Performance Appraisal</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">إدارة الرواتب</span>
+            <span class="ar-text">رواتب الموظفين</span>
             <span class="en-text">Payroll Administration</span>
           </div>
           <div class="resp-item">
@@ -906,41 +1297,41 @@
             <span class="en-text">Occupational Health &amp; Safety</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">تطبيق قانون العمل واللوائح الداخلية</span>
-            <span class="en-text">Labour Law Enforcement &amp; Internal Policy Compliance</span>
+            <span class="ar-text">تطبيق قانون العمل واللوائح الداخلية للشركة</span>
+            <span class="en-text">Labor Law &amp; Internal Policy Enforcement</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">إدارة التدقيق الداخلي والخارجي والرد على ملاحظات الجهات الرقابية وإعداد تقارير متابعة دورية للإدارة العليا.</span>
-            <span class="en-text">Managed internal and external audit processes, responded to regulatory authority observations, and prepared periodic follow-up reports for senior management.</span>
+            <span class="ar-text">إدارة التدقيق الداخلي والخارجي والردود على ملاحظات الجهات الرقابية وإعداد تقارير متابعة دورية للإدارة العليا.</span>
+            <span class="en-text">Managed internal and external audit compliance, responded to regulatory authority observations, and prepared periodic follow-up reports for senior management.</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">صياغة المراسلات والعقود والاتفاقيات والكتب الرسمية ومراجعتها وإتمامها بدقة لغوية وقانونية كاملة.</span>
-            <span class="en-text">Drafted, reviewed, and finalized official correspondence, contracts, and agreements with full linguistic and legal precision.</span>
+            <span class="en-text">Drafted, reviewed, and finalized correspondence, contracts, agreements, and official documents with full linguistic and legal accuracy.</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">هيكلة وتطبيق القواعد والأنظمة والإجراءات التشغيلية، ونقل سير العمل من الأنظمة اليدوية إلى الرقمية.</span>
-            <span class="en-text">Structured and implemented operational rules, regulations, and procedures; successfully migrated documentary workflows from manual to digital systems.</span>
+            <span class="ar-text">هيكلة وتطبيق القواعد والأنظمة والإجراءات التشغيلية؛ ونقل سير العمل من الأنظمة اليدوية إلى الرقمية.</span>
+            <span class="en-text">Structured and implemented organizational rules, regulations, and standard operating procedures; migrated documentary workflows from manual to fully digital systems.</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">إعداد تقارير فورية ودورية وفصلية وسنوية من خلال تجميع البيانات والمعلومات من كافة الأقسام.</span>
-            <span class="en-text">Prepared instant, periodic, quarterly, and annual reports by aggregating data and intelligence from all departments.</span>
+            <span class="en-text">Produced on-demand, periodic, quarterly, and annual reports by consolidating data and intelligence from across all departments.</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">تشكيل وإدارة الفرق واللجان مع توزيع المهام الاستراتيجية لتحقيق الأهداف ذات الأولوية القصوى.</span>
-            <span class="en-text">Formed, led, and managed cross-functional teams and committees with strategic task allocation to meet high-priority organizational objectives.</span>
+            <span class="en-text">Formed, led, and managed cross-functional teams and committees, strategically allocating tasks to deliver high-priority organizational objectives.</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">تطوير وصيانة أنظمة الأرشفة الإلكترونية وإدارة المستندات لتمكين استردادها بشكل سريع وآمن.</span>
-            <span class="en-text">Developed and maintained electronic archiving and document management systems, enabling fast and secure record retrieval.</span>
+            <span class="en-text">Developed and maintained electronic archiving and document management systems, enabling fast, secure, and reliable record retrieval.</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">التعامل مع متطلبات العمل الحساسة، وضمان السرية التامة.</span>
-            <span class="en-text">Handled sensitive and confidential business matters with the utmost discretion and full confidentiality at all times.</span>
+            <span class="ar-text">التعامل مع متطلبات العمل الحساسة وضمان السرية التامة.</span>
+            <span class="en-text">Handled sensitive and confidential business matters with the utmost discretion and professionalism at all times.</span>
           </div>
         </div>
       </div>
 
-      <!-- Public & Government Relations -->
+      <!-- PR & Government Relations -->
       <div class="resp-section" style="margin-top:22px;">
         <div class="head-item">
           <strong>
@@ -952,23 +1343,23 @@
         <div class="resp-grid">
           <div class="resp-item">
             <span class="ar-text">خبرة واسعة في التنسيق مع الجهات الحكومية والشركات الخاصة.</span>
-            <span class="en-text">Extensive liaison experience with governmental bodies and private sector organisations at national and regional levels.</span>
+            <span class="en-text">Extensive liaison experience with government authorities and private sector organizations at both national and regional levels.</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">خبرة في العلاقات العامة — متابعة المحتوى المنشور إعلاميًا ورفع تقرير بذلك للإدارة العليا.</span>
-            <span class="en-text">Media relations expertise — monitored published media content and submitted comprehensive reports to senior leadership.</span>
+            <span class="en-text">Media relations expertise — monitored published and broadcast content and submitted comprehensive reports to senior leadership.</span>
           </div>
           <div class="resp-item">
             <span class="ar-text">خبرة في التعامل مع كبار الشخصيات مع الالتزام الكامل بالبروتوكول.</span>
-            <span class="en-text">Expert in hosting VIPs and high-profile external stakeholders in full compliance with diplomatic and corporate protocol.</span>
+            <span class="en-text">Skilled in hosting VIPs and high-profile external stakeholders with strict adherence to official protocol and etiquette standards.</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">تذليل العقبات وتحديد أسرع الحلول ودعم اتخاذ القرار التنفيذي.</span>
-            <span class="en-text">Identified swift and cost-effective solutions for government-related requirements and provided executive decision-making support.</span>
+            <span class="ar-text">إزالة العقبات وتحديد أسرع الحلول ودعم اتخاذ القرار التنفيذي.</span>
+            <span class="en-text">Identified and implemented the most efficient and cost-effective solutions to government requirements, actively supporting executive decision-making.</span>
           </div>
           <div class="resp-item">
-            <span class="ar-text">التخطيط وتنظيم رحلات العمل، وترتيب التأشيرات والفنادق والتنقلات الرسمية في الداخل والخارج.</span>
-            <span class="en-text">Planned and coordinated executive business travel, including visa arrangements, hotel bookings, and official transportation domestically and internationally.</span>
+            <span class="ar-text">التخطيط وتنظيم رحلات العمل وترتيب التأشيرات والفنادق والتنقلات الرسمية في الداخل والخارج.</span>
+            <span class="en-text">Planned and coordinated all executive travel logistics, including visas, hotel accommodations, and official transportation for domestic and international assignments.</span>
           </div>
         </div>
       </div>
@@ -986,14 +1377,10 @@
       html.setAttribute('dir', 'ltr');
       html.setAttribute('lang', 'en');
       btn.textContent = 'عر / EN';
-      btn.style.left = 'auto';
-      btn.style.right = '18px';
     } else {
       html.setAttribute('dir', 'rtl');
       html.setAttribute('lang', 'ar');
-      btn.textContent = 'EN / عربي';
-      btn.style.right = 'auto';
-      btn.style.left = '18px';
+      btn.textContent = 'EN / عر';
     }
   }
 
@@ -1002,20 +1389,30 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), 80);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
+
   revealEls.forEach(el => observer.observe(el));
 
   /* ── BACKGROUND PARTICLES ── */
   const container = document.getElementById('bgParticles');
-  for (let i = 0; i < 18; i++) {
+  const count = 18;
+  for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
     const size = Math.random() * 6 + 3;
-    p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*18+12}s;animation-delay:${Math.random()*12}s;`;
+    p.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${Math.random() * 100}%;
+      animation-duration: ${Math.random() * 18 + 12}s;
+      animation-delay: ${Math.random() * 12}s;
+    `;
     container.appendChild(p);
   }
 </script>
